@@ -15,13 +15,25 @@ public class Producto {
     public double getPrecio() {
         return this.peso * this.precioXKilo;
     }
+    
+    //Setters.
+    public void setPrecioPorKilo(double precio) {
+        this.precioXKilo = precio;
+    }
 
+    //Getters.
     public double getPeso() { //Está bien el public acá??
         return this.peso;
     }
 
-    public void setPrecioPorKilo(double precio) {
-        this.precioXKilo = precio;
+    public String getDescripcion() {
+        return this.descripcion;
     }
+
+    public double getPrecioPorKilo() {
+        return this.precioXKilo;
+    }
+
+    
     
 }
