@@ -2,27 +2,39 @@ package com.ejemplo;
 
 import java.time.Instant;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 public class Presupuesto {
     Date fecha;
     String cliente;
+    ArrayList<Item> items;
 
     //Constructor.
     public Presupuesto(String cliente) {
         this.cliente = cliente;
 
-        Instant now = Instant.now();
-        Date date = Date.from(now);
-        this.fecha = date;
+        //Instant now = Instant.now();
+        this.fecha = new Date();
+
+        this.items = new ArrayList<Item>();
     }
 
     //Comportamiento.
     public void agregarItem(Item item) {
-
+        this.items.add(item);
     }
 
     public double calcularTotal() {
-        return 0;
+        double sumaPrecio = 0; //Inicializo variable.
+
+        Iterator<Item> iterator = this.items.iterator(); //Instancio un iterator sobre la lista de items.
+        while (iterator.hasNext()) {
+            Item item = iterator.next();
+            sumaPrecio += item.getCantidad() * item.getCostoUnitario(); //Está bien llamarlo así o accedo directamente a los atributos???????? (tipo item.cantidad)
+        }
+
+        return sumaPrecio;
     }
 
 

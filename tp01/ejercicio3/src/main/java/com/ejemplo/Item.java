@@ -1,12 +1,12 @@
 package com.ejemplo;
 
-public class Item  extends Presupuesto {
+public class Item {
     String detalle;
     Integer cantidad;
     double costoUnitario;
 
     //Constructor.
-    public Item(String detalle, Integer cantidad, double costoUnitario) { //???
+    public Item(String detalle, Integer cantidad, double costoUnitario) { 
         this.cantidad = cantidad;
         this.detalle = detalle;
         this.costoUnitario = costoUnitario;
@@ -22,4 +22,7 @@ public class Item  extends Presupuesto {
         return this.costoUnitario;
     }
     
+    public Integer getCantidad() {
+        return this.cantidad;
+    }
 }

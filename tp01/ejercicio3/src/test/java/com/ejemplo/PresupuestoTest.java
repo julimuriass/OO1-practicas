@@ -32,7 +32,7 @@ public class PresupuestoTest {
 
 	@Test
 	public void testInitialize() {
-		assertEquals(LocalDate.now(), presupuesto.getFecha());
+		assertEquals(LocalDate.now(), presupuesto.getFecha()); //No me anda lo de la fechaaaaaaaaa
 		assertEquals("Pedro", presupuesto.getCliente());
 		assertEquals(0, presupuesto.calcularTotal());
 	}
