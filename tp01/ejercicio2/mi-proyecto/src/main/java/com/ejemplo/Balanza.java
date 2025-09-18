@@ -1,14 +1,14 @@
 package com.ejemplo;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Date; //-> no need
 import java.util.List;
 
 public class Balanza {
     Integer cantDeProductos = 0;
     double precioTotal;
     double pesoTotal;
-    ArrayList<Producto> productos = new ArrayList<>(); //Está bien inicializarla acá??????
+    ArrayList<Producto> productos = new ArrayList<>(); //Está bien inicializarla acá?????? -> en el constructor
 
 
     //Comportamiento.
@@ -38,7 +38,7 @@ public class Balanza {
     Ticket emitirTicket() {
         Instant now = Instant.now();
         Date date = Date.from(now); //Preg if okay la forma en la que declaré la fecha.
-        Ticket ticket = new Ticket(date, this.cantDeProductos, this.precioTotal, this.pesoTotal);
+        Ticket ticket = new Ticket(this.cantDeProductos, this.precioTotal, this.pesoTotal);
         return ticket;
     }
 

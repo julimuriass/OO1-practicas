@@ -29,9 +29,9 @@ public class Presupuesto {
         double sumaPrecio = 0; //Inicializo variable.
 
         Iterator<Item> iterator = this.items.iterator(); //Instancio un iterator sobre la lista de items.
-        while (iterator.hasNext()) {
+        while (iterator.hasNext()) { //-> Stream !!!!!!!!!!!
             Item item = iterator.next();
-            sumaPrecio += item.getCantidad() * item.getCostoUnitario(); //Está bien llamarlo así o accedo directamente a los atributos???????? (tipo item.cantidad)
+            sumaPrecio += item.getCantidad() * item.getCostoUnitario(); //hacerlo método de item. le corresponde a él.
         }
 
         return sumaPrecio;

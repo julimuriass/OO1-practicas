@@ -1,18 +1,19 @@
 package com.ejemplo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Ticket {
-    Date fecha;
+    LocalDate fecha;
     Integer cantProductos;
     double presioTotal;
     double pesoTotal;
     ArrayList<Producto> productos;
 
-    public Ticket(Date fecha, Integer cantProductos, double presioTotal, double pesoTotal) {
-        this.fecha = fecha;
+    public Ticket(Integer cantProductos, double presioTotal, double pesoTotal) {
+        this.fecha = LocalDate.now();
         this.cantProductos = cantProductos;
         this.presioTotal = presioTotal;
         this.pesoTotal = pesoTotal;
@@ -41,7 +42,7 @@ public class Ticket {
         return this.cantProductos;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return this.fecha;
     }
 }
