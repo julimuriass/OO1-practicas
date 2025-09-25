@@ -1,10 +1,9 @@
 package figurasYCuerpos.src.main.java.com.ejemplo;
 
 public class Circulo {
-    private double radio; //Está bien ponerle el private??? cuándo sé qué ponerle?
+    private double radio; 
     private double diametro;
 
-    //Cuándo sé que los setters/getters deben ser privados o publicos??
     //Setters.
     void setDiametro (double radio) {
         this.diametro = radio*2;
