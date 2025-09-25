@@ -3,8 +3,12 @@ package com.ejemplo;
 public class Cuadrado implements Figuras2d {
     private double lado;
 
+    public Cuadrado() {
+        this.lado = 1;
+    }
+
     //Setters.
-    private void setLado(double lado) {
+    void setLado(double lado) {
         this.lado = lado;
     }
     //Getters.

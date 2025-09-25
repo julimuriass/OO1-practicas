@@ -1,6 +1,6 @@
 package com.ejemplo;
 
-public class Figuras3d {
+public class Cuerpo3D {
     private Figuras2d cuerpo; //Cuerpo va a ser de cualquier clase que implemente esta interfaz.
     private double altura;
 
