@@ -1,4 +1,4 @@
-package figurasYCuerpos.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 public class Cuadrado implements Figuras2d {
     private double lado;

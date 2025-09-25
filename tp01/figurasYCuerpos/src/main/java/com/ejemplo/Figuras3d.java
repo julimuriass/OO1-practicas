@@ -1,4 +1,4 @@
-package figurasYCuerpos.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 public class Figuras3d {
     private Figuras2d cuerpo; //Cuerpo va a ser de cualquier clase que implemente esta interfaz.

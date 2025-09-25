@@ -1,13 +1,18 @@
-package figurasYCuerpos.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 public class Circulo {
     private double radio; 
     private double diametro;
 
-    //Setters.
-    void setDiametro (double radio) {
-        this.diametro = radio*2;
+    public Circulo() {
+        this.radio = 0;
+        this.diametro = 0;
     }
+
+    //Setters.
+    /*void setDiametro (double radio) {
+        this.diametro = radio*2;
+    }*/
 
     void setRadio(double radio) {
         this.radio = radio;
@@ -16,7 +21,7 @@ public class Circulo {
 
     //Getters.
     double getDiametro() {
-        return this.diametro;
+        return this.radio * 2;
     }
 
     double getRadio() {
@@ -24,7 +29,7 @@ public class Circulo {
     }
 
     double getPerimetro() {
-        return Math.PI * this.diametro;
+        return Math.PI * this.getDiametro();
     }
 
     double getArea() {

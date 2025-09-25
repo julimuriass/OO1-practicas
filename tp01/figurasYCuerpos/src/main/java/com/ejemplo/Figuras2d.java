@@ -1,4 +1,4 @@
-package figurasYCuerpos.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 public interface Figuras2d {
     public double getArea();
