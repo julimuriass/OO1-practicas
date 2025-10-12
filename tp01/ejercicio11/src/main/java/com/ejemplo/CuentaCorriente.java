@@ -13,6 +13,12 @@ public class CuentaCorriente extends Cuenta {
 		super();
 		this.limiteDescubierto = limite;
 	}
+
+	public CuentaCorriente(double saldo, double limite) {
+		super(saldo);
+		this.limiteDescubierto = limite;
+	}
+
 	
 
 	protected double calcularMontoAExtraer(double monto) {
@@ -24,10 +30,14 @@ public class CuentaCorriente extends Cuenta {
 	}
 	
 	public boolean puedeExtraer(double monto) {
-		if((this.getSaldo()>= monto) || (monto -this.getSaldo() >= this.limiteDescubierto)) {
+		if((this.getSaldo()>= monto) || (monto - this.getSaldo() <= this.limiteDescubierto)) {
 			return true;
 		}
 		return false;
+	}
+
+	public double getLimite() {
+		return this.limiteDescubierto;
 	}
 
 }
