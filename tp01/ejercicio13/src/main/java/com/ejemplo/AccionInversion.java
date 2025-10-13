@@ -1,8 +1,8 @@
-package ejercicio13.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 import java.util.List;
 
-public class AccionInversion {
+public class AccionInversion implements Inversion{
     private String nombre;
     private double cantidad;
     private double valorUnitario;
@@ -25,5 +25,9 @@ public class AccionInversion {
     
     public double calcularValor() {
         return this.cantidad * this.valorUnitario;
+    }
+
+    public void aumentarCantidad(double cantidad) {
+        this.cantidad += cantidad;
     }
 }

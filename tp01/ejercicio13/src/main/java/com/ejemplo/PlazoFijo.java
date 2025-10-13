@@ -1,4 +1,4 @@
-package ejercicio13.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 import java.util.Date;
 import java.time.LocalDate;
@@ -15,12 +15,19 @@ public class PlazoFijo implements Inversion {
         this.interes = interes;
     }
 
+
     public double calcularValor() {
-        Date hoy = new Date();
+        Date hoy = new Date(2025, 10, 13);
         long diferenciaMs = hoy.getTime() - fecha.getTime();
         int dias= (int) (diferenciaMs / (1000 * 60 * 60 * 24));
 
+
+        if (dias < 0) {
+            dias = 0;
+        }
+
         return dias * interes + valorInicial;
+
     }
 
     public Date getFecha() {
