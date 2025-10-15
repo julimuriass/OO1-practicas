@@ -1,4 +1,4 @@
-package ejercicio14.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 public abstract class Pieza {
     private String color;

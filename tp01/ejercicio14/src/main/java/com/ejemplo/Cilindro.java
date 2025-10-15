@@ -1,4 +1,4 @@
-package ejercicio14.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 public class Cilindro extends Pieza{
     private double radio;
