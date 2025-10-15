@@ -1,4 +1,4 @@
-package ejercicio15.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,10 @@ public class ClienteDeCorreo {
     
     public ClienteDeCorreo() {
         this.carpetas = new ArrayList<Carpeta>();
+    }
+
+    public void agrgarCarpeta(Carpeta carpeta) {
+        this.carpetas.add(carpeta);
     }
 
     public void recibir(Email email, String carpeta) {

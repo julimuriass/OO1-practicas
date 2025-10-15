@@ -1,4 +1,4 @@
-package ejercicio15.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,9 @@ public class Carpeta {
         this.emails = new ArrayList<>();
     }
 
+    public List<Email> obtenerEmails() {
+        return this.emails;
+    }
 
 
     public void agregarEmail(Email email) {
