@@ -16,11 +16,11 @@ public class CuerpoTest {
 		Cuadrado cuadrado = new Cuadrado();
 		cuadrado.setLado(3);
 
-		cilindro = new Cuerpo3D();
+		//cilindro = new Cuerpo3D();
 		cilindro.setAltura(5);
-		cilindro.setCaraBasal(circulo);
+		//cilindro.setCaraBasal(circulo);
 
-		prisma = new Cuerpo3D();
+		//prisma = new Cuerpo3D();
 		prisma.setAltura(7);
 		prisma.setCaraBasal(cuadrado);
 	}
