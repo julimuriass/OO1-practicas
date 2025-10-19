@@ -8,8 +8,9 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.DateLapse;
-import com.DateLapseI;
+import main.java.com.ejemplo.DateLapse;
+import main.java.com.ejemplo.DateLapseI;
+import main.java.com.ejemplo.DateLapseSize;
 
 
 public class DateLapseTest {

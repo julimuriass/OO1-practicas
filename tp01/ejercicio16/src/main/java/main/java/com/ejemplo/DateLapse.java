@@ -12,6 +12,26 @@ public class DateLapse implements DateLapseI{
         this.to = to;
     }
 
+    public boolean overlaps(DateLapse dateLapse) {
+        //Límite 1 y 2 son iguales.
+        //inicio nuevo >= fecha from.
+        //fin nuevo <= fecha to.
+
+        if (dateLapse.getFrom().isEqual(from) || dateLapse.getTo().isEqual(to)) {
+            return true;
+        } else {
+            if (dateLapse.getFrom().isAfter(this.from) || dateLapse.getFrom().isEqual(this.from)) {
+                return true;
+            } else {
+                if (dateLapse.getTo().isBefore(this.to) || dateLapse.getTo().isEqual(this.to)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
 
 
     public LocalDate getFrom() {
