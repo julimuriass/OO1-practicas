@@ -3,7 +3,7 @@ package com;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class DateLapse {
+public class DateLapse implements DateLapseI{
     private LocalDate from;
     private LocalDate to;
 
