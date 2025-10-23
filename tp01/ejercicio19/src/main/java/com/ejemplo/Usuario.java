@@ -1,4 +1,4 @@
-package ejercicio19.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,7 +9,6 @@ public class Usuario {
     private String direccion;
     private int dni;
     private List<Inmueble> propiedades;
-    private List<Reserva> reservas;
 
 
     public Usuario(String nombre, String direccion, int dni){
@@ -18,19 +17,10 @@ public class Usuario {
         this.nombre = nombre;
 
         this.propiedades = new ArrayList<>();
-        this.reservas = new ArrayList<>();
     }
 
     public int getDni() {
         return this.dni;
-    }
-
-    public void agregarReserva(Reserva reserva) {
-        this.reservas.add(reserva);
-    }
-
-    public void eliminarReserva(Reserva reserva) {
-        this.reservas.remove(reserva);
     }
 
     public double calcularIngresoPropietario(LocalDate from, LocalDate to) {
@@ -40,6 +30,5 @@ public class Usuario {
 
         return sumaTotal * 0.75;
     }
-
 
 }

@@ -1,4 +1,4 @@
-package ejercicio19.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -21,27 +21,14 @@ public class Inmueble {
 
     }
 
-    public String getNombre() {
-        return this.name;
+    public double calcularPrecio(Reserva reserva) {
+        //Verificar si existe la reserva.
+        if (!this.historialReserva.contains(reserva)) return 0.0;
+        return this.precio * reserva.calcularPrecio();
     }
-
-    public boolean consultarDisponibilidad(LocalDate from, LocalDate to) {
-
-        //Recorro el historial de reservas preguntando por fechas.
-        DateLapse fecha = new DateLapse(from, to);
-                                                                //Delego a reserva.
-        return this.historialReserva.stream().anyMatch(reserva -> reserva.consultarDisponibilidad(fecha));
-    }
-    
 
     public void agregarReserva(Reserva reserva) {
         this.historialReserva.add(reserva);
-    }
-
-    public double calcularPrecio(Reserva reserva) {
-        Reserva reserv = this.historialReserva.stream().filter(hr -> hr.equals(reserva)).findAny().orElse(null);
-
-        return reserv.calcularPrecio(this.precio);
     }
 
     public void eliminarReserva(Reserva reserva) {
@@ -53,7 +40,38 @@ public class Inmueble {
 
         if (reservasApropiadas.isEmpty()) return 0.0;
 
-        return reservasApropiadas.stream().mapToDouble(ra -> ra.calcularPrecio(this.precio)).sum();
+        return reservasApropiadas.stream().mapToDouble(ra -> ra.calcularPrecio()).sum();
+    }
+
+    public boolean consultarDisponibilidad(LocalDate from, LocalDate to) {
+
+        //Recorro el historial de reservas preguntando por fechas.
+        DateLapse fecha = new DateLapse(from, to);
+                                                                //Delego a reserva.
+        return this.historialReserva.stream().anyMatch(reserva -> reserva.consultarDisponibilidad(fecha));
+    }
+
+
+    public boolean crearReserva(Usuario usuario, LocalDate from, LocalDate to) {
+        //Consulto disponibilidad.
+        if (!this.consultarDisponibilidad(from, to)) return false;
+
+        //Crear reserva.
+        Reserva reserva = new Reserva(usuario, this, from, to);
+
+        this.agregarReserva(reserva);
+
+        return true;
+    }
+
+    public boolean cancelarReserva(Reserva reserva) {
+        if (reserva.includesDate(LocalDate.now())) return false;
+
+        //Buscar en el historial de reservas (contains)
+        //Asumo que la reserva existe, no sé.
+        this.historialReserva.remove(reserva);
+
+        return true;
     }
 }
 

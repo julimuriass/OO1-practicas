@@ -1,9 +1,7 @@
-package com.ejemplo;
+package main.java.com.ejemplo;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-
-import com.DateLapseI;
 
 public class DateLapseSize implements DateLapseI {
     private LocalDate from;
