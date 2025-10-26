@@ -2,23 +2,32 @@ package com.ejemplo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+
+import com.PoliticaCancelacion;
 
 public class Inmueble {
     private String direccion;
     private String name;
     private double precio;
     private List<Reserva> historialReserva;
+    private PoliticaCancelacion politicaCancelacion;
 
-    public Inmueble(String direccion, String name, double precio) {
+    public Inmueble(String direccion, String name, double precio, PoliticaCancelacion politicaCancelacion) {
         this.direccion = direccion;
         this.name = name;
         this.precio = precio;
+        this.politicaCancelacion = politicaCancelacion;
 
         this.historialReserva = new ArrayList<>();
 
+    }
+
+    public double calcularReembolso(double precio, Reserva reserva) {
+        return this.politicaCancelacion.calcularReembolso(precio, LocalDate.now(), reserva);
     }
 
     public double calcularPrecio(Reserva reserva) {
