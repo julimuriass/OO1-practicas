@@ -1,4 +1,4 @@
-package ejercicio19.src.main.java.com.ejemplo;
+package com.ejemplo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
